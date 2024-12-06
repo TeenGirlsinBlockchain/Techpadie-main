@@ -1,3 +1,6 @@
+"use client";
+import "../global.css";
+
 import Link from "next/link";
 import { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
@@ -103,7 +106,7 @@ export default function Page() {
           <div className="text-center mt-2">
             Already have an account?{" "}
             <Link href="/login">
-              <a className="text-[#227FA1]">log in here</a>
+              <p className="text-[#227FA1]">log in here</p>
             </Link>
           </div>
         </form>
