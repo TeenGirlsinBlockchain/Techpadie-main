@@ -1,5 +1,6 @@
-
+import "../global.css";
 import Image from "next/image";
+
 
 interface CardProps {
   level: string;
@@ -21,7 +22,7 @@ const CardComponent: React.FC<CardProps> = ({
     <div className="max-w-sm bg-white rounded-lg shadow-lg overflow-hidden">
       <div className="relative">
         <Image
-          src="../public/images/course1.png"
+          src="/images/course1.png"
           alt="Course"
           className="w-full h-48 object-cover"
           width={400}
@@ -57,7 +58,7 @@ const CardComponent: React.FC<CardProps> = ({
         </div>
         <div className="flex items-center mt-4">
           <Image
-            src="../public/images/tutor.png" 
+            src="/images/tutor.png" 
             alt={instructor}
             className="w-10 h-10 rounded-full"
             width={40}
