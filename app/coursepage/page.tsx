@@ -2,6 +2,8 @@ import Navigation from "../components/Navigation";
 import Image from "next/image";
 
 export default function Page() {
+  const courseTitle = "Introduction to Web Development";
+  //TODO: Make this dynamic, this example is only for starters once backend is setup this should be fixed
   return (
     <div className="flex h-screen">
       {/* Sidebar */}
@@ -25,7 +27,7 @@ export default function Page() {
             <input
               type="text"
               placeholder="Search courses"
-              className="w-full bg-transparent  text-sm text-gray-600 placeholder-gray-500"
+              className="w-full bg-transparent border-none outline-none text-sm text-gray-600 placeholder-gray-500"
             />
           </div>
 
@@ -37,6 +39,13 @@ export default function Page() {
             height={60}
             className="rounded-full"
           />
+        </div>
+        <div className="flex items-center text-sm text-gray-400">
+          <span className="mr-2">Courses</span>
+          <span className="text-gray-400">/</span>
+          <span className="ml-2 font-semibold text-gray-400">
+            {courseTitle}
+          </span>
         </div>
       </main>
     </div>
