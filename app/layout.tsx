@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import Navigation from "./components/Navigation";
+// import Navigation from "./components/Navigation";
 
 interface RootLayoutProps {
   children: ReactNode; 
@@ -8,7 +8,7 @@ interface RootLayoutProps {
 export default function RootLayout({ children }: RootLayoutProps) {
   return <html lang="en">
     <body>
-      <Navigation />
+      {/* <Navigation /> */}
       <main>
         {children}
       </main>
