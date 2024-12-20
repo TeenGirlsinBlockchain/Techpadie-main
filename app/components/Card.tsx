@@ -12,24 +12,30 @@ interface CardProps {
 }
 
 const CardComponent: React.FC<CardProps> = ({
-  level,
+  // level,
   learners,
   rating,
   title,
   instructor
 }) => {
   return (
-    <div className="max-w-sm bg-white rounded-lg shadow-lg overflow-hidden">
+    <div className="max-w-sm bg-white rounded-lg border-solid border-2 border-grey-500 overflow-hidden p-4">
       <div className="relative">
         <Image
           src="/images/course1.png"
           alt="Course"
-          className="w-full h-48 object-cover"
+          className="w-full h-48"
           width={400}
           height={200}
         />
-        <div className="absolute top-2 left-2 bg-blue-500 text-white text-sm px-2 py-1 rounded">
-          {level}
+        <div className="absolute top-4 right-4 bg-blue-500 rounded-full p-2">
+        <Image
+        src="/images/bookmark1.svg" 
+        alt="Bookmark"
+        className="w-4 h-4"
+        width={16}
+        height={16}
+      />
         </div>
       </div>
       <div className="p-4">

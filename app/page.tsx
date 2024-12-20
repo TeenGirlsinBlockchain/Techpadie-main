@@ -20,7 +20,7 @@ export default function Page() {
           </div>
           {/* User Avatar */}
           <Image
-            src="/images/avatar.png" // Replace with the actual avatar path
+            src="/images/avatar.png" 
             alt="User Avatar"
             width={60}
             height={60}
@@ -28,9 +28,9 @@ export default function Page() {
           />
         </div>
 
-        {/* Grid of Cards */}
+      
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Render CardComponent multiple times with different props */}
+         
           <CardComponent
             level="Beginner"
             learners={120}
