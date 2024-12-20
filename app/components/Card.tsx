@@ -1,5 +1,6 @@
 import "../global.css";
 import Image from "next/image";
+import Link from 'next/link';
 
 interface CardProps {
   level: string;
@@ -56,7 +57,7 @@ const CardComponent: React.FC<CardProps> = ({
               />
               {learners}
             </div>
-            
+
             <div className="flex items-center text-sm text-gray-500">
               <Image
                 src="/images/star.svg" 
@@ -71,7 +72,11 @@ const CardComponent: React.FC<CardProps> = ({
           </div>
         </div>
 
-        <h2 className="text-lg font-semibold mb-2">{title}</h2>
+        <h2 className="text-lg font-semibold mb-2">
+          <Link href="/coursepage" className="text-blue-500 hover:underline">
+            {title}
+          </Link>
+        </h2>
         <div className="flex items-center mt-4">
           <Image
             src="/images/tutor.png"
