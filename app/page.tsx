@@ -55,6 +55,30 @@ export default function Page() {
             instructor="Chris Walter"
             imageUrl="/images/course3.png"
           />
+          <CardComponent
+            level="Beginner"
+            learners={120}
+            rating={5.0}
+            title="Introduction to Digital Marketing and Salesforce"
+            instructor="Chris Walter"
+            imageUrl="/images/course3.png"
+          />
+          <CardComponent
+            level="Beginner"
+            learners={120}
+            rating={5.0}
+            title="Introduction to Digital Marketing and Salesforce"
+            instructor="Chris Walter"
+            imageUrl="/images/course2.png"
+          />
+          <CardComponent
+            level="Beginner"
+            learners={120}
+            rating={5.0}
+            title="Introduction to Digital Marketing and Salesforce"
+            instructor="Chris Walter"
+            imageUrl="/images/course1.png"
+          />
         </div>
       </main>
     </div>
