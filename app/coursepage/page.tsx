@@ -1,5 +1,6 @@
 import Navigation from "../components/Navigation";
 import Image from "next/image";
+import DetailedCard from "../components/IntroCard";
 
 export default function Page() {
   const courseTitle = "Introduction to Web Development";
@@ -40,12 +41,30 @@ export default function Page() {
             className="rounded-full"
           />
         </div>
-        <div className="flex items-center text-sm text-gray-400">
+        <div className="flex items-center text-sm text-gray-400 mb-4">
           <span className="mr-2">Courses</span>
           <span className="text-gray-400">/</span>
           <span className="ml-2 font-semibold text-gray-400">
             {courseTitle}
           </span>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <DetailedCard
+            title="Introduction to Web development : HTML , CSS and Javascript"
+            description="Web development is the process of creating and maintaining websites vor web applications, encompassing 
+                         a variety of tasks such as designing user interfaces, coding functionality, and ensuring optimal performance. 
+                         It involves front-end development, which focuses on the visual and interactive aspects users see, and 
+                         back-end development."
+            learners={100}
+            rating={4.8}
+          />
+          <DetailedCard
+            title="Advanced Web Design Techniques"
+            description="Explore advanced CSS, animations, and design principles to elevate your web design skills."
+            learners={150}
+            rating={4.5}
+          />
         </div>
       </main>
     </div>
