@@ -3,11 +3,18 @@ import { Link } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import CourseCard from '../components/CourseCard';
 
-// Sample course data based on the images
+
+import userAvatar from '../assets/user-avatar.svg';
+import instructorAvatar from '../assets/instructor-avatar.svg';
+import webDevImage from '../assets/web-dev-course-image.svg';
+import digitalMarketingImage from '../assets/digital-marketing-image.svg';
+import socialMediaImage from '../assets/social-media-image.svg';
+
+// Sample course data
 const coursesData = [
   {
     id: 1,
-    image: '/images/course1.jpg', // Replace with actual image paths
+    image: webDevImage,
     title: 'Introduction to web development',
     subtitle: 'using HTML,CSS and javascript.',
     level: 'Beginner',
@@ -16,12 +23,12 @@ const coursesData = [
     deviceType: 'desktop',
     instructor: {
       name: 'Chris Walter',
-      avatar: '/images/chris-walter.jpg' // Replace with actual avatar path
+      avatar: instructorAvatar
     }
   },
   {
     id: 2,
-    image: '/images/course2.jpg',
+    image: socialMediaImage,
     title: 'Introduction to Social media management',
     subtitle: 'and growth ads.',
     level: 'Beginner',
@@ -30,12 +37,12 @@ const coursesData = [
     deviceType: 'mobile',
     instructor: {
       name: 'Chris Walter',
-      avatar: '/images/chris-walter.jpg'
+      avatar: instructorAvatar
     }
   },
   {
     id: 3,
-    image: '/images/course3.jpg',
+    image: digitalMarketingImage,
     title: 'Introduction to digital marketing',
     subtitle: 'and analytics.',
     level: 'Beginner',
@@ -43,12 +50,12 @@ const coursesData = [
     rating: 5.0,
     instructor: {
       name: 'Chris Walter',
-      avatar: '/images/chris-walter.jpg'
+      avatar: instructorAvatar
     }
   },
   {
     id: 4,
-    image: '/images/course3.jpg',
+    image: digitalMarketingImage,
     title: 'Introduction to digital marketing',
     subtitle: 'and analytics.',
     level: 'Beginner',
@@ -56,12 +63,12 @@ const coursesData = [
     rating: 5.0,
     instructor: {
       name: 'Chris Walter',
-      avatar: '/images/chris-walter.jpg'
+      avatar: instructorAvatar
     }
   },
   {
     id: 5,
-    image: '/images/course1.jpg',
+    image: webDevImage,
     title: 'Introduction to web development',
     subtitle: 'using HTML,CSS and javascript.',
     level: 'Beginner',
@@ -69,12 +76,12 @@ const coursesData = [
     rating: 5.0,
     instructor: {
       name: 'Chris Walter',
-      avatar: '/images/chris-walter.jpg'
+      avatar: instructorAvatar
     }
   },
   {
     id: 6,
-    image: '/images/course2.jpg',
+    image: socialMediaImage,
     title: 'Introduction to Social media management',
     subtitle: 'and growth ads.',
     level: 'Beginner',
@@ -83,12 +90,12 @@ const coursesData = [
     deviceType: 'mobile',
     instructor: {
       name: 'Chris Walter',
-      avatar: '/images/chris-walter.jpg'
+      avatar: instructorAvatar
     }
   },
   {
     id: 7,
-    image: '/images/course1.jpg',
+    image: webDevImage,
     title: 'Introduction to web development',
     subtitle: 'using HTML,CSS and javascript.',
     level: 'Beginner',
@@ -96,12 +103,12 @@ const coursesData = [
     rating: 4.9,
     instructor: {
       name: 'Chris Walter',
-      avatar: '/images/chris-walter.jpg'
+      avatar: instructorAvatar
     }
   },
   {
     id: 8,
-    image: '/images/course3.jpg',
+    image: digitalMarketingImage,
     title: 'Introduction to digital marketing',
     subtitle: 'and analytics.',
     level: 'Beginner',
@@ -109,12 +116,12 @@ const coursesData = [
     rating: 5.0,
     instructor: {
       name: 'Chris Walter',
-      avatar: '/images/chris-walter.jpg'
+      avatar: instructorAvatar
     }
   },
   {
     id: 9,
-    image: '/images/course2.jpg',
+    image: socialMediaImage,
     title: 'Introduction to Social media management',
     subtitle: 'and growth ads.',
     level: 'Beginner',
@@ -123,16 +130,16 @@ const coursesData = [
     deviceType: 'mobile',
     instructor: {
       name: 'Chris Walter',
-      avatar: '/images/chris-walter.jpg'
+      avatar: instructorAvatar
     }
   }
 ];
 
 const Dashboard = () => {
- 
+  // User data
   const userData = {
     name: 'Elijah',
-    avatar: '/images/user-avatar.jpg' 
+    avatar: userAvatar
   };
 
   return (
@@ -141,15 +148,15 @@ const Dashboard = () => {
       <Sidebar />
       
       {/* Main Content */}
-      <div className="flex-1 lg:ml-32 p-4 sm:p-6 md:p-8">
+      <div className="flex-1 p-8">
         {/* Header Section */}
-        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-6 mt-10 lg:mt-0">
-          <div className="mb-4 sm:mb-0">
-            <h1 className="text-xl md:text-2xl font-bold text-gray-800">Welcome back {userData.name}</h1>
-            <p className="text-sm md:text-base text-gray-600 mt-1">Top courses you may like to enroll in today!</p>
+        <div className="flex justify-between items-center mb-6">
+          <div>
+            <h1 className="text-2xl font-bold text-gray-800">Welcome back {userData.name}</h1>
+            <p className="text-gray-600 mt-1">Top courses you may like to enroll in today!</p>
           </div>
           
-          <div className="w-10 h-10 sm:w-12 sm:h-12 bg-yellow-100 rounded-full overflow-hidden">
+          <div className="w-12 h-12 bg-yellow-100 rounded-full overflow-hidden">
             <img 
               src={userData.avatar} 
               alt={userData.name}
@@ -159,7 +166,7 @@ const Dashboard = () => {
         </div>
         
         {/* Course Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {coursesData.map(course => (
             <Link to={`/course/${course.id}`} key={course.id} className="hover:no-underline">
               <CourseCard course={course} />

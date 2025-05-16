@@ -1,0 +1,33 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <circle cx="100" cy="100" r="100" fill="#DBEAFE" />
+  
+  <!-- Face -->
+  <circle cx="100" cy="85" r="60" fill="#93C5FD" />
+  
+  <!-- Hair -->
+  <path d="M40 60C40 40 70 20 100 20C130 20 160 40 160 60C160 40 130 15 100 15C70 15 40 40 40 60Z" fill="#1E293B" />
+  <path d="M40 60C40 40 70 30 100 30C130 30 160 40 160 60C160 70 155 75 140 75C120 75 120 60 100 60C80 60 80 75 60 75C45 75 40 70 40 60Z" fill="#1E293B" />
+  
+  <!-- Beard -->
+  <path d="M60 105C60 130 80 150 100 150C120 150 140 130 140 105" fill="#1E293B" />
+  
+  <!-- Eyes -->
+  <ellipse cx="75" cy="85" rx="8" ry="10" fill="#1E293B" />
+  <ellipse cx="125" cy="85" rx="8" ry="10" fill="#1E293B" />
+  
+  <!-- Eyebrows -->
+  <path d="M65 70C75 65 85 70 85 70" stroke="#1E293B" stroke-width="2" stroke-linecap="round" />
+  <path d="M115 70C125 65 135 70 135 70" stroke="#1E293B" stroke-width="2" stroke-linecap="round" />
+  
+  <!-- Glasses -->
+  <path d="M60 85C60 75 70 75 75 75C80 75 90 75 90 85C90 95 80 95 75 95C70 95 60 95 60 85Z" stroke="#1E293B" stroke-width="2" fill="none" />
+  <path d="M110 85C110 75 120 75 125 75C130 75 140 75 140 85C140 95 130 95 125 95C120 95 110 95 110 85Z" stroke="#1E293B" stroke-width="2" fill="none" />
+  <line x1="90" y1="85" x2="110" y2="85" stroke="#1E293B" stroke-width="2" />
+  
+  <!-- Smile -->
+  <path d="M80 110C90 115 110 115 120 110" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" />
+  
+  <!-- Shirt collar -->
+  <path d="M50 180C70 150 130 150 150 180" fill="#3B82F6" />
+</svg>
