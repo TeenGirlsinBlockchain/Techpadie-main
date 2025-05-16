@@ -11,14 +11,14 @@ import SignUp from "./pages/SignUp";
 
 function App() {
   return (
-    <Router>
+  
       <Routes>
         <Route path="/signup" element={<SignUp />} />
         {/* Add more routes as needed */}
         {/* <Route path="/login" element={<Login />} /> */}
         {/* <Route path="/" element={<Home />} /> */}
       </Routes>
-    </Router>
+  
   )
 }
 
