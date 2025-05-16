@@ -63,7 +63,7 @@ const SignUp = () => {
               id="email"
               name="email"
               value={formData.email}
-               placeholder="you123@example.com"
+              placeholder="you123@example.com"
               onChange={handleChange}
               className="w-full p-3 border border-gray-300 rounded-md text-black focus:outline-none focus:ring-2 focus:ring-[#227FA1]"
             />
@@ -124,7 +124,7 @@ const SignUp = () => {
           <p className="text-sm text-gray-600">
             Already have an account?{" "}
             <span className="text-[#227FA1] hover:underline font-medium cursor-pointer">
-              log in here
+              <a href="/login">log in here</a>
             </span>
           </p>
         </div>
