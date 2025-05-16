@@ -4,11 +4,11 @@ import Sidebar from '../components/Sidebar';
 import CourseCard from '../components/CourseCard';
 
 
-import userAvatar from '../assets/user-avatar.svg';
-import instructorAvatar from '../assets/instructor-avatar.svg';
-import webDevImage from '../assets/web-dev-course-image.svg';
-import digitalMarketingImage from '../assets/digital-marketing-image.svg';
-import socialMediaImage from '../assets/social-media-image.svg';
+import userAvatar from '../../public/icons/user-avatar.svg';
+import instructorAvatar from '../../public/icons/instructor-avatar.svg';
+import webDevImage from '../../public/icons/web-dev-course-image.svg';
+import digitalMarketingImage from '../../public/icons/digital-marketing-image.svg';
+import socialMediaImage from '../../public/icons/social-media-image.svg';
 
 // Sample course data
 const coursesData = [
