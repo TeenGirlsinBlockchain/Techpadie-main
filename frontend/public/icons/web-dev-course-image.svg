@@ -1,0 +1,21 @@
+<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="200" fill="#0F172A" />
+  
+  <!-- Code Lines -->
+  <g fill="#6EE7B7" font-family="monospace" font-size="14">
+    <text x="20" y="30">function <tspan fill="#38BDF8">init</tspan>() {</text>
+    <text x="40" y="50">const <tspan fill="#C4B5FD">app</tspan> = document.<tspan fill="#38BDF8">querySelector</tspan>(<tspan fill="#FCA5A5">'#app'</tspan>);</text>
+    <text x="40" y="70">const <tspan fill="#C4B5FD">data</tspan> = {</text>
+    <text x="60" y="90"><tspan fill="#F9A8D4">message</tspan>: <tspan fill="#FCA5A5">'Hello World!'</tspan>,</text>
+    <text x="60" y="110"><tspan fill="#F9A8D4">count</tspan>: 0</text>
+    <text x="40" y="130">};</text>
+    <text x="40" y="150"><tspan fill="#38BDF8">renderApp</tspan>(<tspan fill="#C4B5FD">app</tspan>, <tspan fill="#C4B5FD">data</tspan>);</text>
+    <text x="20" y="170">}</text>
+  </g>
+  
+  <!-- Cursor -->
+  <rect x="148" y="150" width="2" height="14" fill="#FFFFFF">
+    <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" />
+  </rect>
+</svg>
