@@ -1,76 +1,77 @@
 import React from 'react';
 import ProgressBar from '../ProgressBar';
-import GradientBall from '../GradientBall';
-import GlassmorphicCard from '../GlassmorphicCard';
 import ContinueButton from '../Buttons/ContinueButton';
-import { motion } from 'framer-motion';
 
 const Step2 = ({ onContinue, userData }) => {
+  const userName = userData?.fullName || 'User';
+  
   return (
-    <div className="w-full max-w-md mx-auto bg-white rounded-2xl shadow-lg p-8 relative overflow-hidden">
+    <div className="w-full max-w-xl mx-auto bg-white rounded-2xl shadow-lg p-8 relative overflow-hidden">
+      {/* Progress Bar - Using full primary color */}
       <ProgressBar step={2} />
       
-      <div className="mt-6 relative z-10">
-        <h2 className="text-2xl font-bold text-gray-800">More knowledge</h2>
-        <p className="text-gray-600 mt-1">All in one place</p>
-        <p className="text-gray-600 mt-3 text-sm">
+      {/* Content */}
+      <div className="relative z-10 mt-6">
+        <h2 className="text-2xl font-bold text-[#227FA1]">More Knowledge</h2>
+        <p className="text-gray-700 mt-1">All in one place</p>
+        <p className="text-gray-600 mt-2 text-sm">
           Enjoy super-fast transaction with our wallet based on the solana blockchain ecosystem.
         </p>
       </div>
       
-      {/* Background gradient effect */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <GradientBall />
+      {/* Enhanced Background Gradient - Expanded to cover cards but not reach progress bar */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Main gradient background */}
+        <div className="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-b from-[#e6f4f8] via-[#c8e8f0] to-[#e6f4f8] opacity-60" />
+        
+        {/* Central glow with stronger blue */}
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-[#227FA1] blur-2xl opacity-40" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-[#227FA1] blur-xl opacity-30" />
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 rounded-full bg-[#227FA1] blur-lg opacity-20" />
       </div>
       
-      {/* Scrollable cards container */}
-      <div className="mt-12 mb-8 relative z-10">
-        <motion.div 
-          className="flex space-x-4 overflow-x-auto py-4 px-2 scrollbar-hide"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          {/* Card 1 - Introduction */}
-          <GlassmorphicCard size="small">
-            <div className="flex items-start">
-              <div className="mr-2 mt-1 text-green-500">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-              </div>
-              <div>
-                <p className="font-medium text-white">Introduction to blockchain technology</p>
+      {/* Cards - Staggered layout with enhanced glass effect */}
+      <div className="mt-10 mb-10 relative z-10 flex flex-col items-center">
+        {/* Card 1 - Introduction - Wider to fit text on one line */}
+        <div className="w-full max-w-sm ml-8 p-4 rounded-xl backdrop-filter backdrop-blur-lg bg-white/20 border border-white/30 shadow-lg">
+          <div className="flex items-center">
+            <div className="text-green-500 mr-2">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" fill="#4CAF50" fillOpacity="0.2" />
+                <path d="M8 12L11 15L16 9" stroke="#4CAF50" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
+            <p className="text-white font-medium whitespace-nowrap">Introduction to blockchain technology</p>
+          </div>
+        </div>
+        
+        {/* Card 2 - User's Learning - Larger and centered */}
+        <div className="w-full max-w-md p-5 rounded-xl backdrop-filter backdrop-blur-lg bg-white/15 border border-white/30 shadow-lg my-4">
+          <div className="flex items-center">
+            <div className="mr-3">
+              <div className="w-6 h-6 rounded-full border-2 border-white flex items-center justify-center">
+                <div className="w-3 h-3 rounded-full bg-white"></div>
               </div>
             </div>
-          </GlassmorphicCard>
-          
-          {/* Card 2 - In Progress */}
-          <GlassmorphicCard size="large">
-            <div className="flex flex-col items-center">
-              <div className="w-full bg-white bg-opacity-30 rounded-full h-2.5 mb-4">
-                <div className="bg-[#227FA1] h-2.5 rounded-full" style={{ width: '40%' }}></div>
-              </div>
-              <p className="font-medium text-white text-center">
-                {userData?.fullName || 'User'}'s learning
-              </p>
+            <p className="text-white font-medium">{userName}'s learning</p>
+          </div>
+        </div>
+        
+        {/* Card 3 - Completed - Offset to the right like the first card */}
+        <div className="w-full max-w-xs ml-8 p-4 rounded-xl backdrop-filter backdrop-blur-lg bg-white/20 border border-white/30 shadow-lg">
+          <div className="flex items-center justify-between">
+            <p className="text-white font-medium">Completed</p>
+            <div className="text-green-500">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10" fill="#4CAF50" fillOpacity="0.2" />
+                <path d="M8 12L11 15L16 9" stroke="#4CAF50" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </div>
-          </GlassmorphicCard>
-          
-          {/* Card 3 - Completed */}
-          <GlassmorphicCard size="small">
-            <div className="flex items-start justify-between">
-              <p className="font-medium text-white">Completed</p>
-              <div className="ml-2 text-green-500">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
-              </div>
-            </div>
-          </GlassmorphicCard>
-        </motion.div>
+          </div>
+        </div>
       </div>
       
+      {/* Continue Button - Using full primary color */}
       <ContinueButton onClick={onContinue} />
     </div>
   );

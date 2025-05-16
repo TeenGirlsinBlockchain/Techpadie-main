@@ -11,7 +11,6 @@ const Step1 = ({ onContinue }) => {
     question3: '',
     question4: '',
     question5: '',
-    question6: '',
   });
 
   // Handler for selecting an option
@@ -32,12 +31,12 @@ const Step1 = ({ onContinue }) => {
       <ProgressBar step={1} />
       
       <div className="mt-6">
-        <h2 className="text-2xl font-bold text-gray-800">Welcome onboard</h2>
-        <p className="text-gray-600 mt-1">Let's get to know you!</p>
+        <h2 className="text-2xl font-bold text-black">Welcome Onboard</h2>
+        <p className="text-gray-800 mt-1">Let's get to know you!</p>
       </div>
       
       <div className="mt-8">
-        <p className="font-medium text-gray-700 mb-3">What brings you to Techpadie?</p>
+        <p className="font-medium text-[#227FA1] mb-3">What brings you to Techpadie?</p>
         <div className="grid grid-cols-3 gap-3">
           <SelectionBox 
             text="Learn" 
@@ -59,48 +58,84 @@ const Step1 = ({ onContinue }) => {
       
       {/* Question 2 */}
       <div className="mt-6">
-        <p className="font-medium text-gray-700 mb-3">Question 2</p>
+        <p className="font-medium text-[#227FA1] mb-3">Highest level of education ?</p>
         <div className="grid grid-cols-3 gap-3">
           <SelectionBox 
-            text="Option 1" 
-            isSelected={preferences.question2 === 'Option 1'} 
-            onClick={() => handleSelection('question2', 'Option 1')} 
+            text="Learn" 
+            isSelected={preferences.question2 === 'Learn'} 
+            onClick={() => handleSelection('question2', 'Learn')} 
           />
           <SelectionBox 
-            text="Option 2" 
-            isSelected={preferences.question2 === 'Option 2'} 
-            onClick={() => handleSelection('question2', 'Option 2')} 
+            text="Earn" 
+            isSelected={preferences.question2 === 'Earn'} 
+            onClick={() => handleSelection('question2', 'Earn')} 
           />
           <SelectionBox 
-            text="Option 3" 
-            isSelected={preferences.question2 === 'Option 3'} 
-            onClick={() => handleSelection('question2', 'Option 3')} 
+            text="Community" 
+            isSelected={preferences.question2 === 'Community'} 
+            onClick={() => handleSelection('question2', 'Community')} 
+          />
+        </div>
+      </div>
+
+      <div className="mt-6">
+        <p className="font-medium text-[#227FA1] mb-3">Preferred social media ?</p>
+        <div className="grid grid-cols-3 gap-3">
+          <SelectionBox 
+            text="Telegram" 
+            isSelected={preferences.question3 === 'Telegram'} 
+            onClick={() => handleSelection('question3', 'Telegram')} 
+          />
+          <SelectionBox 
+            text="Discord" 
+            isSelected={preferences.question3 === 'Discord'} 
+            onClick={() => handleSelection('question3', 'Discord')} 
+          />
+          <SelectionBox 
+            text="Twitter X" 
+            isSelected={preferences.question3 === 'Twitter X'} 
+            onClick={() => handleSelection('question3', 'Twitter X')} 
+          />
+        </div>
+      </div>
+
+      <div className="mt-6">
+        <p className="font-medium text-[#227FA1] mb-3">Which application mode do you prefer ?</p>
+        <div className="grid grid-cols-3 gap-3">
+          <SelectionBox 
+            text="Dark mode" 
+            isSelected={preferences.question4 === 'Dark mode'} 
+            onClick={() => handleSelection('question4', 'Dark mode')} 
+          />
+          <SelectionBox 
+            text="Light mode" 
+            isSelected={preferences.question4 === 'Light mode'} 
+            onClick={() => handleSelection('question4', 'Light mode')} 
+          />
+        </div>
+      </div>
+
+      <div className="mt-6">
+        <p className="font-medium text-[#227FA1] mb-3">What’s your level of web3;0 experience ?</p>
+        <div className="grid grid-cols-3 gap-3">
+          <SelectionBox 
+            text="0-1 year" 
+            isSelected={preferences.question5 === '0-1 year'} 
+            onClick={() => handleSelection('question5', '0-1 year')} 
+          />
+          <SelectionBox 
+            text="2-4 years" 
+            isSelected={preferences.question5 === '2-4 years'} 
+            onClick={() => handleSelection('question5', '2-4 years')} 
+          />
+          <SelectionBox 
+            text="5 years-above" 
+            isSelected={preferences.question5 === '5 years-above'} 
+            onClick={() => handleSelection('question5', '5 years-above')} 
           />
         </div>
       </div>
       
-      {/* Repeat similar structure for questions 3-6 */}
-      {/* For brevity, I'm showing just 3 out of the 6 questions */}
-      <div className="mt-6">
-        <p className="font-medium text-gray-700 mb-3">Question 3</p>
-        <div className="grid grid-cols-3 gap-3">
-          <SelectionBox 
-            text="Option 1" 
-            isSelected={preferences.question3 === 'Option 1'} 
-            onClick={() => handleSelection('question3', 'Option 1')} 
-          />
-          <SelectionBox 
-            text="Option 2" 
-            isSelected={preferences.question3 === 'Option 2'} 
-            onClick={() => handleSelection('question3', 'Option 2')} 
-          />
-          <SelectionBox 
-            text="Option 3" 
-            isSelected={preferences.question3 === 'Option 3'} 
-            onClick={() => handleSelection('question3', 'Option 3')} 
-          />
-        </div>
-      </div>
       
       <ContinueButton onClick={() => {
         onContinue(preferences);
