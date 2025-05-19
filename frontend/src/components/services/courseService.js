@@ -1,7 +1,7 @@
-import webDevImage from '../icons/web-dev-course-image.svg';
-import digitalMarketingImage from '../icons/digital-marketing-image.svg';
-import socialMediaImage from '../icons/social-media-image.svg';
-import instructorAvatar from '../icons/instructor-avatar.svg';
+import webDevImage from '../../../public/icons/web-dev-course-image.svg';
+import digitalMarketingImage from '../../../public/icons/digital-marketing-image.svg';
+import socialMediaImage from '../../../public/icons/social-media-image.svg';
+import instructorAvatar from '../../../public/icons/instructor-avatar.svg';
 
 const mockCourses = [
   {

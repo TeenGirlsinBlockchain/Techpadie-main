@@ -15,9 +15,9 @@ import {
   EmojiEvents as AchievementIcon
 } from '@mui/icons-material';
 import Sidebar from '../components/layout/Sidebar';
-import CourseGrid from '../features/courses/components/CourseGrid';
-import useUserStore from '../store/useUserStore';
-import { useCourses } from '../hooks/useCourses';
+import CourseGrid from '../components/features/courses/components/CourseGrid';
+import useUserStore from '../components/store/useUserStore';
+import { useCourses } from '../components/hooks/useCourses';
 
 const Dashboard = () => {
   const { user, getUserDisplayName, getUserInitials } = useUserStore();

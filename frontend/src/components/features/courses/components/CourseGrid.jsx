@@ -11,7 +11,7 @@ import {
 } from '@mui/material';
 import { ViewModule, ViewList } from '@mui/icons-material';
 import CourseCard from './CourseCard';
-import { useCourses } from '../hooks/useCourses';
+import { useCourses } from '../../../hooks/useCourses';
 
 const CourseGrid = ({ 
   filters = {},
