@@ -1,180 +1,176 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import Sidebar from '../components/Sidebar';
-import CourseCard from '../components/CourseCard';
-
-
-import userAvatar from '../../public/icons/user-avatar.svg';
-import instructorAvatar from '../../public/icons/instructor-avatar.svg';
-import webDevImage from '../../public/icons/web-dev-course-image.svg';
-import digitalMarketingImage from '../../public/icons/digital-marketing-image.svg';
-import socialMediaImage from '../../public/icons/social-media-image.svg';
-
-// Sample course data
-const coursesData = [
-  {
-    id: 1,
-    image: webDevImage,
-    title: 'Introduction to web development',
-    subtitle: 'using HTML,CSS and javascript.',
-    level: 'Beginner',
-    students: 120,
-    rating: 5.0,
-    deviceType: 'desktop',
-    instructor: {
-      name: 'Chris Walter',
-      avatar: instructorAvatar
-    }
-  },
-  {
-    id: 2,
-    image: socialMediaImage,
-    title: 'Introduction to Social media management',
-    subtitle: 'and growth ads.',
-    level: 'Beginner',
-    students: 110,
-    rating: 5.0,
-    deviceType: 'mobile',
-    instructor: {
-      name: 'Chris Walter',
-      avatar: instructorAvatar
-    }
-  },
-  {
-    id: 3,
-    image: digitalMarketingImage,
-    title: 'Introduction to digital marketing',
-    subtitle: 'and analytics.',
-    level: 'Beginner',
-    students: 115,
-    rating: 5.0,
-    instructor: {
-      name: 'Chris Walter',
-      avatar: instructorAvatar
-    }
-  },
-  {
-    id: 4,
-    image: digitalMarketingImage,
-    title: 'Introduction to digital marketing',
-    subtitle: 'and analytics.',
-    level: 'Beginner',
-    students: 105,
-    rating: 5.0,
-    instructor: {
-      name: 'Chris Walter',
-      avatar: instructorAvatar
-    }
-  },
-  {
-    id: 5,
-    image: webDevImage,
-    title: 'Introduction to web development',
-    subtitle: 'using HTML,CSS and javascript.',
-    level: 'Beginner',
-    students: 125,
-    rating: 5.0,
-    instructor: {
-      name: 'Chris Walter',
-      avatar: instructorAvatar
-    }
-  },
-  {
-    id: 6,
-    image: socialMediaImage,
-    title: 'Introduction to Social media management',
-    subtitle: 'and growth ads.',
-    level: 'Beginner',
-    students: 105,
-    rating: 5.0,
-    deviceType: 'mobile',
-    instructor: {
-      name: 'Chris Walter',
-      avatar: instructorAvatar
-    }
-  },
-  {
-    id: 7,
-    image: webDevImage,
-    title: 'Introduction to web development',
-    subtitle: 'using HTML,CSS and javascript.',
-    level: 'Beginner',
-    students: 112,
-    rating: 4.9,
-    instructor: {
-      name: 'Chris Walter',
-      avatar: instructorAvatar
-    }
-  },
-  {
-    id: 8,
-    image: digitalMarketingImage,
-    title: 'Introduction to digital marketing',
-    subtitle: 'and analytics.',
-    level: 'Beginner',
-    students: 108,
-    rating: 5.0,
-    instructor: {
-      name: 'Chris Walter',
-      avatar: instructorAvatar
-    }
-  },
-  {
-    id: 9,
-    image: socialMediaImage,
-    title: 'Introduction to Social media management',
-    subtitle: 'and growth ads.',
-    level: 'Beginner',
-    students: 115,
-    rating: 5.0,
-    deviceType: 'mobile',
-    instructor: {
-      name: 'Chris Walter',
-      avatar: instructorAvatar
-    }
-  }
-];
+import {
+  Box,
+  Typography,
+  Avatar,
+  Container,
+  Paper,
+  Grid,
+  Card,
+  CardContent
+} from '@mui/material';
+import { 
+  School as SchoolIcon,
+  Timeline as TimelineIcon,
+  EmojiEvents as AchievementIcon
+} from '@mui/icons-material';
+import Sidebar from '../components/layout/Sidebar';
+import CourseGrid from '../features/courses/components/CourseGrid';
+import useUserStore from '../store/useUserStore';
+import { useCourses } from '../hooks/useCourses';
 
 const Dashboard = () => {
-  // User data
-  const userData = {
-    name: 'Elijah',
-    avatar: userAvatar
+  const { user, getUserDisplayName, getUserInitials } = useUserStore();
+  const { stats } = useCourses();
+
+  // You can fetch user-specific data here
+  const userStats = {
+    enrolledCourses: 5,
+    completedCourses: 3,
+    achievements: 12,
+    studyHours: 48
   };
 
   return (
-    <div className="flex min-h-screen bg-gray-50">
-      {/* Sidebar */}
+    <Box sx={{ display: 'flex', minHeight: '100vh', bgcolor: 'grey.50' }}>
       <Sidebar />
       
-      {/* Main Content */}
-      <div className="flex-1 p-8">
-        {/* Header Section */}
-        <div className="flex justify-between items-center mb-6">
-          <div>
-            <h1 className="text-2xl font-bold text-gray-800">Welcome back {userData.name}</h1>
-            <p className="text-gray-600 mt-1">Top courses you may like to enroll in today!</p>
-          </div>
-          
-          <div className="w-12 h-12 bg-yellow-100 rounded-full overflow-hidden">
-            <img 
-              src={userData.avatar} 
-              alt={userData.name}
-              className="w-full h-full object-cover"
+      <Box sx={{ flexGrow: 1, p: 3 }}>
+        <Container maxWidth="xl">
+          {/* Welcome Header */}
+          <Box 
+            display="flex" 
+            justifyContent="space-between" 
+            alignItems="center" 
+            mb={4}
+          >
+            <Box>
+              <Typography variant="h4" fontWeight="bold" color="text.primary">
+                Welcome back, {getUserDisplayName()}!
+              </Typography>
+              <Typography variant="body1" color="text.secondary" mt={1}>
+                Top courses you may like to enroll in today!
+              </Typography>
+            </Box>
+            
+            <Avatar
+              src={user?.avatar}
+              sx={{ 
+                width: 64, 
+                height: 64, 
+                bgcolor: 'primary.main',
+                fontSize: '1.5rem',
+                fontWeight: 'bold'
+              }}
+            >
+              {getUserInitials()}
+            </Avatar>
+          </Box>
+
+          {/* Stats Cards */}
+          <Grid container spacing={3} mb={4}>
+            <Grid item xs={12} sm={6} md={3}>
+              <StatsCard
+                title="Enrolled Courses"
+                value={userStats.enrolledCourses}
+                icon={<SchoolIcon />}
+                color="primary"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6} md={3}>
+              <StatsCard
+                title="Completed"
+                value={userStats.completedCourses}
+                icon={<AchievementIcon />}
+                color="success"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6} md={3}>
+              <StatsCard
+                title="Study Hours"
+                value={userStats.studyHours}
+                icon={<TimelineIcon />}
+                color="info"
+              />
+            </Grid>
+            <Grid item xs={12} sm={6} md={3}>
+              <StatsCard
+                title="Total Courses"
+                value={stats.total}
+                icon={<SchoolIcon />}
+                color="warning"
+              />
+            </Grid>
+          </Grid>
+
+          {/* Course Recommendations */}
+          <Paper sx={{ p: 3, borderRadius: 2 }}>
+            <CourseGrid
+              title="Recommended Courses"
+              filters={{ limit: 6 }}
+              showPagination={false}
+              showViewToggle={false}
             />
-          </div>
-        </div>
-        
-        {/* Course Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {coursesData.map(course => (
-            <Link to={`/course/${course.id}`} key={course.id} className="hover:no-underline">
-              <CourseCard course={course} />
-            </Link>
-          ))}
-        </div>
-      </div>
-    </div>
+          </Paper>
+
+          {/* Continue Learning Section */}
+          <Box mt={4}>
+            <Paper sx={{ p: 3, borderRadius: 2 }}>
+              <Typography variant="h5" gutterBottom>
+                Continue Learning
+              </Typography>
+              <Typography variant="body2" color="text.secondary" mb={3}>
+                Pick up where you left off
+              </Typography>
+              
+              {/* You can create a separate component for in-progress courses */}
+              <Typography variant="body2" color="text.secondary">
+                No courses in progress
+              </Typography>
+            </Paper>
+          </Box>
+        </Container>
+      </Box>
+    </Box>
+  );
+};
+
+// Reusable Stats Card Component
+const StatsCard = ({ title, value, icon, color = 'primary' }) => {
+  return (
+    <Card 
+      sx={{ 
+        height: '100%',
+        transition: 'transform 0.2s ease-in-out',
+        '&:hover': {
+          transform: 'translateY(-4px)',
+          boxShadow: 3
+        }
+      }}
+    >
+      <CardContent>
+        <Box display="flex" alignItems="center" justifyContent="space-between">
+          <Box>
+            <Typography variant="h4" fontWeight="bold" color={`${color}.main`}>
+              {value}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {title}
+            </Typography>
+          </Box>
+          <Box 
+            sx={{ 
+              p: 1.5, 
+              borderRadius: 2, 
+              bgcolor: `${color}.light`,
+              color: `${color}.main`
+            }}
+          >
+            {icon}
+          </Box>
+        </Box>
+      </CardContent>
+    </Card>
   );
 };
 
