@@ -1,5 +1,3 @@
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
 import {
   BrowserRouter as Router,
   Routes,
@@ -12,6 +10,7 @@ import SignUp from "./pages/SignUp";
 import Login from "./pages/Login";
 import Onboarding from "./pages/Onboarding";
 import Dashboard from "./pages/Dashboard";
+import CourseDetail from "./pages/CourseDetail";
 
 function App() {
   return (
@@ -21,6 +20,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/onboarding" element={<Onboarding />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/course/:id" element={<CourseDetail />} />
         <Route path="/" element={<Dashboard/>} />
       </Routes>
   
