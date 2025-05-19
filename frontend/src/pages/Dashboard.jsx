@@ -10,7 +10,8 @@ import webDevImage from '../../public/icons/web-dev-course-image.svg';
 import digitalMarketingImage from '../../public/icons/digital-marketing-image.svg';
 import socialMediaImage from '../../public/icons/social-media-image.svg';
 
-// Sample course data
+// Sample course data try
+
 const coursesData = [
   {
     id: 1,
@@ -172,6 +173,9 @@ const Dashboard = () => {
               <CourseCard course={course} />
             </Link>
           ))}
+        </div>
+        <div>
+          <p>here is a change</p>
         </div>
       </div>
     </div>
