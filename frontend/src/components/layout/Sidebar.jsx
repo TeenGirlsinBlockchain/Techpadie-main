@@ -25,7 +25,7 @@ import {
   Dashboard as DashboardIcon,
   School as SchoolIcon
 } from '@mui/icons-material';
-import useUserStore from '../../store/useUserStore';
+import useUserStore from '../store/useUserStore';
 
 const DRAWER_WIDTH = 240;
 const DRAWER_WIDTH_COLLAPSED = 72;

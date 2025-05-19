@@ -17,7 +17,7 @@ import {
   AccountCircle as AccountIcon,
   Search as SearchIcon
 } from '@mui/icons-material';
-import useUserStore from '../../store/useUserStore';
+import useUserStore from '../store/useUserStore';
 
 const TopBar = ({ onSidebarToggle, sidebarOpen }) => {
   const { user, getUserDisplayName, getUserInitials, clearUser } = useUserStore();
