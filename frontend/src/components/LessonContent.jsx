@@ -8,6 +8,7 @@ import remarkBreaks from 'remark-breaks';
 import HighlightManager from './HighlightManager';
 import QuizCard from './QuizCard';
 import GlossaryTooltip from './GlossaryTooltip';
+import { glossaryTerms } from '../data/CourseData';
 
 const LessonContent = ({ 
   lesson, 
@@ -64,14 +65,8 @@ const LessonContent = ({
     return () => document.removeEventListener('mouseup', handleSelection);
   }, []);
 
-  // Glossary terms (would come from backend)
-  const glossaryTerms = {
-    'HTML': 'HyperText Markup Language - the standard markup language for creating web pages',
-    'CSS': 'Cascading Style Sheets - used for describing the presentation of a document written in HTML',
-    'JavaScript': 'A programming language that enables interactive web pages and is an essential part of web applications',
-    'responsive design': 'An approach to web design that makes web pages render well on a variety of devices and window sizes',
-    'semantic': 'HTML elements that clearly describe their meaning in a human- and machine-readable way'
-  };
+  // Glossary terms from external data file
+  // const glossaryTerms = imported from '../data/courseData'
 
   // Highlight search terms in content
   const highlightSearchTerms = (text) => {
@@ -259,6 +254,7 @@ const LessonContent = ({
             <QuizCard 
               quiz={lesson.quiz}
               darkMode={darkMode}
+              fontSize={fontSize}
               onComplete={() => setShowQuiz(false)}
             />
           </div>
