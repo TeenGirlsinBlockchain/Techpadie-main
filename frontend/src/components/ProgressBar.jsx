@@ -1,13 +1,10 @@
 import React from 'react';
 
-const ProgressBar = ({ step }) => {
-  // Calculate progress based on step (1, 2, or 3)
-  const progress = (step / 3) * 100;
-  
+const ProgressBar = ({ progress }) => {
   return (
-    <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+    <div className="w-full bg-gray-200 dark:bg-gray-700 h-1">
       <div 
-        className="h-full bg-[#227FA1] rounded-full transition-all duration-500 ease-in-out" 
+        className="bg-blue-600 h-1 transition-all duration-300 ease-out"
         style={{ width: `${progress}%` }}
       />
     </div>
